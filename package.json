@@ -1,25 +1,40 @@
-{ "name" : "node-statsd"
-, "description" : "node client for Etsy'd StatsD server"
-, "version" : "0.1.1"
-, "author" : "Steve Ivy"
-, "contributors": [ "Russ Bradberry <rbradberry@gmail.com>" ]
-, "repository" :
-  { "type" : "git"
-  , "url" : "git://github.com/sivy/node-statsd.git"
-  }
-, "bugs" : { "url" : "https://github.com/sivy/node-statsd/issues" }
-, "directories" : { "lib" : "./lib/" }
-, "engines" : { "node" : ">=0.1.97" }
-, "scripts": {
-      "test": "mocha -R spec"
-    }
-, "dependencies" : {}
-, "devDependencies": {
-    "mocha":"*"
-}
-, "licenses" :
-  [ { "type" : "MIT"
-    , "url" : "http://github.com/sivy/node-stats/raw/master/LICENSE"
-    }
-  ]
+{
+    "name": "node-dogstatsd",
+    "description": "node client for StatsD server of Datadog",
+    "version": "0.2.0",
+    "author": "Steve Ivy",
+    "contributors": [
+        "Russ Bradberry <rbradberry@gmail.com>",
+        "Suhas Karanth <suhas.karanth@babyoye.com>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mspl/node-dogstatsd.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mspl/node-dogstatsd/issues"
+    },
+    "directories": {
+        "lib": "./lib/"
+    },
+    "engines": {
+        "node": ">=6.3.0"
+    },
+    "scripts": {
+        "eslint": "./pre-commit-eslint.sh",
+        "test": "mocha -R spec"
+    },
+    "pre-commit": ["eslint", "test"],
+    "main": "./lib/statsd",
+    "devDependencies": {
+        "eslint": "^3.1.1",
+        "mocha": "*",
+        "pre-commit": "^1.1.3"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/mspl/node-dogstatsd/raw/master/LICENSE"
+        }
+    ]
 }

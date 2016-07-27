@@ -1,18 +1,10 @@
-# node-statsd
+# node-dogstatsd
 
-A node.js client for [Etsy](http://etsy.com)'s [StatsD](https://github.com/etsy/statsd) server.
+A node.js client for StatsD server of [Datadog](http://www.datadoghq.com).
 
 This client will let you fire stats at your StatsD server from a node.js application.
 
-node-statsd Runs and is tested on Node 0.6+ on all *nix platforms and 0.8+ on all platforms including Windows.
-
-[![Build Status](https://secure.travis-ci.org/sivy/node-statsd.png?branch=master)](http://travis-ci.org/sivy/node-statsd)
-
-## Installation
-
-```
-$ npm install node-statsd
-```
+node-dogstatsd Runs and is tested on Node 6.3+ on all platforms.
 
 ## Usage
 
@@ -26,7 +18,7 @@ Parameters (specified as an options hash):
 * `globalize`:   Expose this StatsD instance globally? `default: false`
 * `cacheDns`:    Cache the initial dns lookup to *host* `default: false`
 * `mock`:        Create a mock StatsD instance, sending no stats to the server? `default: false`
-* `global_tags`: Optional tags that will be added to every metric `default: []`
+* `global_tags`: Optional tags that will be added to every metric
 
 All StatsD methods have the same API:
 * `name`:       Stat name `required`
@@ -38,7 +30,7 @@ All StatsD methods have the same API:
 If an array is specified as the `name` parameter each item in that array will be sent along with the specified value.
 
 ```javascript
-  var StatsD = require('node-statsd'),
+  var StatsD = require('node-dogstatsd'),
       client = new StatsD();
 
   // Timing: sends a timing command with the specified milliseconds
@@ -91,7 +83,7 @@ If an array is specified as the `name` parameter each item in that array will be
 
 ## Errors
 
-In the event that there is a socket error, `node-statsd` will allow this error to bubble up.  If you would like to catch the errors, just attach a listener to the socket property on the instance.
+In the event that there is a socket error, `node-dogstatsd` will allow this error to bubble up.  If you would like to catch the errors, just attach a listener to the socket property on the instance.
 
 ```javascript
 client.socket.on('error', function(error) {
@@ -103,5 +95,5 @@ If you want to catch errors in sending a message then use the callback provided.
 
 ## License
 
-node-statsd is licensed under the MIT license.
+node-dogstatsd is licensed under the MIT license.
 
